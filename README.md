@@ -22,13 +22,19 @@ strawberry_image_segmentation
 - [train_maskrcnn_strawberry_imageSegmentation.ipynb](train_maskrcnn_strawberry_imageSegmentation.ipynb) : This Notebook let us to train a Mask R-CNN model using Detectron2 library in order to make image segmentaton over strawberry fruits. Here, we define different functions to make:
 
     1. Set Up the config to make the training.
-    2. Compute evalution metris both in training and validation dataset using Coco Evaluator. The primcipal used metric is mAP.
+    2. Compute evalution metris both in training and validation dataset using Coco Evaluator. The principal used metric is mAP.
     3. Train the model.
     4. Evaluate the model over the test dataset and compute mAP.
     5. Make inference over images.
     6. Make inference over a video.
 
 - [from_Detectron2_2_TensorRT.ipynb](from_Detectron2_2_TensorRT.ipynb) : This notebook follows this [guide](https://github.com/NVIDIA/TensorRT/tree/main/samples/python/detectron2) provided by NVIDIA TensorRT official repository. The notebook let us to transfor and optimize the Mask R-CNN model produced in Detectron2 to TensorRT engine. This is useful when we need to optimize the model to deploy it in real life applications using embedded systems. The optimization is make in terms of size of the model and frames per second (FPS) it can process. NVIDIA TensorRT to optimize the model use three quantization methods: **FP32**, **FP16**, and **INT8**. More info at [TensorRT introducing](https://developer.nvidia.com/tensorrt) and [TensorRT official documentation](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#quantization). 
+
+## Execution:
+    1. Convert original segmentation masks labels to COCO format annotations using transform_labelsMasks_2_cocoFormat_annotation notebook.
+    2. Train the model using train_maskrcnn_strawberry_imageSegmentation notebook.
+    3. Optimize the model with TensorRT and evaluate the optimized models using thefrom_Detectron2_2_TensorRT notebook.
+
 
 ## Results:
 
@@ -42,7 +48,7 @@ The results of all the produced model during training and optimization are prese
 
 More results at our paper: **link to the published paper**
 
-## Dataset, Coco format annotations and Models availability.
+## Dataset, COCO co format annotations and Models availability.
 
 ### Dataset:
 
