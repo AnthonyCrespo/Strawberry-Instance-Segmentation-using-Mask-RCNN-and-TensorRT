@@ -30,7 +30,7 @@ strawberry_image_segmentation
 
 - [from_Detectron2_2_TensorRT.ipynb](from_Detectron2_2_TensorRT.ipynb) : This notebook follows this [guide](https://github.com/NVIDIA/TensorRT/tree/main/samples/python/detectron2) provided by NVIDIA TensorRT official repository. The notebook let us to transfor and optimize the Mask R-CNN model produced in Detectron2 to TensorRT engine. This is useful when we need to optimize the model to deploy it in real life applications using embedded systems. The optimization is make in terms of size of the model and frames per second (FPS) it can process. NVIDIA TensorRT to optimize the model use three quantization methods: **FP32**, **FP16**, and **INT8**. More info at [TensorRT introducing](https://developer.nvidia.com/tensorrt) and [TensorRT official documentation](https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#quantization). 
 
-### Execution:
+## Execution:
 1. Convert original segmentation masks labels to COCO format annotations using the [transform_labelsMasks_2_cocoFormat_annotations.ipynb](./transform_labelsMasks_2_cocoFormat_annotations.ipynb) notebook.
 2. Train the model using the [train_maskrcnn_strawberry_imageSegmentation.ipynb](train_maskrcnn_strawberry_imageSegmentation.ipynb) notebook.
 3. Optimize the model with TensorRT and evaluate the optimized models using the [from_Detectron2_2_TensorRT.ipynb](from_Detectron2_2_TensorRT.ipynb) notebook.
